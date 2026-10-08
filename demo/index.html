@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мягкая лапа — груминг-салон (демо-проект)</title>
+<meta name="description" content="Демо-проект: лендинг груминг-салона для собак и кошек. Все названия, цены и контакты вымышлены.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Иллюстрации питомцев: подставьте свои фото вместо <svg><use> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="pet-dog" viewBox="0 0 200 200">
+      <ellipse cx="100" cy="192" rx="64" ry="40" style="fill:var(--fur)"/>
+      <ellipse cx="46" cy="106" rx="26" ry="52" transform="rotate(12 46 106)" style="fill:var(--ear)"/>
+      <ellipse cx="154" cy="106" rx="26" ry="52" transform="rotate(-12 154 106)" style="fill:var(--ear)"/>
+      <ellipse cx="100" cy="96" rx="55" ry="62" style="fill:var(--fur)"/>
+      <ellipse cx="100" cy="124" rx="31" ry="25" style="fill:var(--muzzle)"/>
+      <circle class="eye" cx="80" cy="84" r="6.5" fill="#2B2A33"/>
+      <circle class="eye" cx="120" cy="84" r="6.5" fill="#2B2A33"/>
+      <ellipse cx="100" cy="111" rx="10" ry="7" fill="#2B2A33"/>
+      <path d="M100 118v8M88 130q12 10 24 0" stroke="#2B2A33" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="pet-fluffy" viewBox="0 0 200 200">
+      <ellipse cx="100" cy="192" rx="60" ry="42" style="fill:var(--fur)"/>
+      <circle cx="50" cy="104" r="31" style="fill:var(--fur)"/>
+      <circle cx="150" cy="104" r="31" style="fill:var(--fur)"/>
+      <circle cx="100" cy="46" r="30" style="fill:var(--fur)"/>
+      <circle cx="100" cy="102" r="50" style="fill:var(--fur)"/>
+      <circle cx="68" cy="136" r="23" style="fill:var(--fur)"/>
+      <circle cx="132" cy="136" r="23" style="fill:var(--fur)"/>
+      <ellipse cx="100" cy="124" rx="20" ry="15" style="fill:var(--muzzle)"/>
+      <circle class="eye" cx="80" cy="96" r="6" fill="#2B2A33"/>
+      <circle class="eye" cx="120" cy="96" r="6" fill="#2B2A33"/>
+      <ellipse cx="100" cy="115" rx="8.5" ry="6" fill="#2B2A33"/>
+      <path d="M100 121v6M91 130q9 7 18 0" stroke="#2B2A33" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="pet-cat" viewBox="0 0 200 200">
+      <ellipse cx="100" cy="198" rx="60" ry="32" style="fill:var(--fur)"/>
+      <polygon points="50,76 60,14 110,54" style="fill:var(--fur)"/>
+      <polygon points="150,76 140,14 90,54" style="fill:var(--fur)"/>
+      <polygon points="62,62 66,34 88,54" style="fill:var(--muzzle)"/>
+      <polygon points="138,62 134,34 112,54" style="fill:var(--muzzle)"/>
+      <ellipse cx="100" cy="112" rx="64" ry="56" style="fill:var(--fur)"/>
+      <ellipse class="eye" cx="78" cy="102" rx="10" ry="12" fill="#F2D77A"/>
+      <ellipse class="eye" cx="122" cy="102" rx="10" ry="12" fill="#F2D77A"/>
+      <ellipse class="eye" cx="78" cy="102" rx="3.5" ry="9" fill="#2B2A33"/>
+      <ellipse class="eye" cx="122" cy="102" rx="3.5" ry="9" fill="#2B2A33"/>
+      <polygon points="92,121 108,121 100,130" fill="#B9825A"/>
+      <path d="M100 130v7M88 140q12 8 24 0" stroke="#2B2A33" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M62 128l-34-6M62 136l-34 6M138 128l34-6M138 136l34 6" stroke="#2B2A33" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+    </symbol>
+
+
+    <symbol id="icon-paw" viewBox="0 0 64 64">
+      <circle cx="13" cy="26" r="7"/><circle cx="26" cy="14" r="7.5"/><circle cx="40" cy="14" r="7.5"/><circle cx="52" cy="26" r="7"/>
+      <path d="M32 30c-10 0-18 9-18 17 0 6 5 9 10 9 3 0 5-1 8-1s5 1 8 1c5 0 10-3 10-9 0-8-8-17-18-17z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="demo-bar" role="note">Демо-проект для портфолио. Название, цены, отзывы и контакты вымышлены.</div>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="#top" aria-label="Мягкая лапа — на главную">
+      <svg class="brand-mark" width="40" height="40" aria-hidden="true"><use href="#icon-paw"/></svg>
+      <span class="brand-text"><strong>Мягкая лапа</strong><small>груминг для собак и кошек</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Основное меню">
+      <a href="#services">Услуги</a>
+      <a href="#gallery">Работы</a>
+      <a href="#masters">Мастера</a>
+      <a href="#prices">Цены</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn-outline" href="#booking">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="paws" aria-hidden="true"><svg class="paw p1"><use href="#icon-paw"/></svg><svg class="paw p2"><use href="#icon-paw"/></svg><svg class="paw p3"><use href="#icon-paw"/></svg><svg class="paw p4"><use href="#icon-paw"/></svg><svg class="paw p5"><use href="#icon-paw"/></svg></div>
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">Груминг-салон · Ваш город</p>
+      <h1 aria-label="Ухоженный питомец и спокойный визит"><span class="w" style="--i:0"><span>Ухоженный</span></span> <span class="w" style="--i:1"><span>питомец</span></span> <span class="w" style="--i:2"><span>и</span></span> <span class="w" style="--i:3"><em><span>спокойный</span></em></span> <span class="w" style="--i:4"><span>визит</span></span></h1>
+      <p class="lead">Бережно моем, стрижём и расчёсываем собак и кошек. Один мастер на питомца, без спешки и с перерывами, если нужно.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-pulse" href="#booking">Записаться на груминг</a>
+        <a class="btn btn-ghost" href="#prices">Узнать стоимость</a>
+      </div>
+      <p class="rating"><span aria-hidden="true">★★★★★</span> Пример блока с рейтингом: подставьте реальные данные клиента</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="arch arch-big" style="--bg:#E9D6B8;--fur:#E7B78A;--ear:#B97B4D;--muzzle:#F7E6D2"><svg><use href="#pet-dog"/></svg></div>
+      <div class="arch arch-sm a1" style="--bg:#CFE3D4;--fur:#FFFFFF;--muzzle:#F1ECE4"><svg><use href="#pet-fluffy"/></svg></div>
+      <div class="arch arch-sm a2" style="--bg:#F7E3A6;--fur:#9AA3AF;--muzzle:#E8D2B4"><svg><use href="#pet-cat"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Стрижка по породе</span><i>·</i><span>Мытьё и сушка</span><i>·</i><span>SPA-уход</span><i>·</i><span>Вычёсывание подшёрстка</span><i>·</i><span>Когти и уши</span><i>·</i><span>Собаки и кошки</span><i>·</i>
+    <span>Стрижка по породе</span><i>·</i><span>Мытьё и сушка</span><i>·</i><span>SPA-уход</span><i>·</i><span>Вычёсывание подшёрстка</span><i>·</i><span>Когти и уши</span><i>·</i><span>Собаки и кошки</span><i>·</i>
+  </div>
+</div>
+
+
+<section class="stats" aria-label="Салон в цифрах">
+  <div class="container stats-grid">
+    <div class="stat reveal" style="--bg:#E9D6B8"><b data-count="8">8</b><span>лет заботимся о питомцах</span></div>
+    <div class="stat reveal" style="--bg:#CFE3D4"><b data-count="3500" data-suffix="+">3500+</b><span>довольных хвостов</span></div>
+    <div class="stat reveal" style="--bg:#F7E3A6"><b data-count="3">3</b><span>мастера-грумера</span></div>
+    <div class="stat reveal" style="--bg:#CFE0F1"><b data-count="98" data-suffix="%">98%</b><span>возвращаются снова</span></div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Услуги</h2>
+      <p>Перед началом мастер осматривает шерсть и кожу, обсуждает с вами пожелания и только потом берётся за работу.</p>
+    </div>
+    <div class="cards">
+      <article class="card tilt reveal"><span class="card-num">01</span><h3>Комплекс для собак</h3><p>Мытьё, сушка и стрижка по стандарту породы или по вашему желанию. Когти, уши и глаза в том же визите.</p></article>
+      <article class="card tilt reveal"><span class="card-num">02</span><h3>Комплекс для кошек</h3><p>Отдельное время без собак в зале. Вычёсываем подшёрсток, делаем гигиеническую или модельную стрижку.</p></article>
+      <article class="card tilt reveal"><span class="card-num">03</span><h3>SPA-уход</h3><p>Маски и увлажнение для сухой или путающейся шерсти. Дома её проще расчёсывать.</p></article>
+      <article class="card tilt reveal"><span class="card-num">04</span><h3>Экспресс-линька</h3><p>Убираем лишний подшёрсток за один визит. Меньше шерсти на мебели и одежде.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section section-tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Работы мастеров</h2>
+      <p>Питомцы наших клиентов после визита. В боевом проекте здесь фото из салона.</p>
+    </div>
+    <div class="gallery">
+      <figure class="work reveal"><div class="work-img photo"><img src="assets/yorkie-after.webp" alt="Йоркширский терьер после модельной стрижки" width="900" height="900" loading="lazy" decoding="async"></div><figcaption>Йоркширский терьер: модельная стрижка</figcaption></figure>
+      <figure class="work reveal"><div class="work-img photo"><img src="assets/maltese.webp" alt="Белая мальтезе после груминга" width="900" height="900" loading="lazy" decoding="async"></div><figcaption>Мальтезе: гигиеническая стрижка</figcaption></figure>
+      <figure class="work reveal"><div class="work-img photo"><img src="assets/pekingese.webp" alt="Пекинес после ухода за шерстью" width="900" height="900" loading="lazy" decoding="async"></div><figcaption>Пекинес: SPA-уход</figcaption></figure>
+      <figure class="work wide reveal"><div class="work-img photo"><img src="assets/cat.webp" alt="Рыжая кошка у входа в салон" width="900" height="900" loading="lazy" decoding="async"></div><figcaption>Рыжий кот: вычёсывание подшёрстка</figcaption></figure>
+      <figure class="work wide reveal"><div class="work-img photo"><img src="assets/doodle.webp" alt="Золотистый лабрадудль с кудрявой шерстью" width="900" height="900" loading="lazy" decoding="async"></div><figcaption>Лабрадудль: стрижка и уход</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="before-after" class="section">
+  <div class="container ba-grid">
+    <div class="ba-text reveal">
+      <p class="eyebrow">До и после</p>
+      <h2>Потяните ползунок</h2>
+      <p>Один и тот же питомец до визита и после: колтуны разобраны, глаза открыты, форма аккуратная.</p>
+      <p class="note">Пример блока. В боевом проекте здесь пары реальных фото «до» и «после» из салона.</p>
+    </div>
+    <div class="ba-wrap reveal">
+      <div class="ba" id="ba">
+        <img class="ba-img" src="assets/yorkie-after.webp" alt="Йоркширский терьер после груминга" width="900" height="900" loading="lazy" decoding="async" draggable="false">
+        <span class="ba-tag ba-tag-after">После</span>
+        <img class="ba-img ba-before" id="ba-before" src="assets/yorkie-before.webp" alt="Тот же йоркширский терьер до груминга" width="900" height="900" loading="lazy" decoding="async" draggable="false">
+        <span class="ba-tag ba-tag-before">До</span>
+        <div class="ba-handle" id="ba-handle" aria-hidden="true"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6"/><path d="M15 6l6 6-6 6"/></svg></span></div>
+        <input type="range" id="ba-range" min="0" max="100" value="50" aria-label="Сравнить до и после">
+      </div>
+      <p class="hint">← тяните →</p>
+    </div>
+  </div>
+</section>
+
+<section id="approach" class="section section-tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Как проходит визит</h2>
+      <p>Три простых шага, чтобы питомец чувствовал себя спокойно.</p>
+    </div>
+    <div class="steps-layout">
+      <figure class="steps-photo reveal"><img src="assets/groomer.webp" alt="Мастер расчёсывает золотистого ретривера на столе для груминга" width="1000" height="1000" loading="lazy" decoding="async"></figure>
+      <ol class="steps">
+        <li class="reveal"><span class="step-n">1</span><div><h3>Знакомство</h3><p>Питомец осваивается, мастер осматривает шерсть, кожу, когти и обсуждает с вами желаемый результат.</p></div></li>
+        <li class="reveal"><span class="step-n">2</span><div><h3>Уход</h3><p>Мытьё, сушка и стрижка в спокойном темпе. Если питомец устал, делаем паузу.</p></div></li>
+        <li class="reveal"><span class="step-n">3</span><div><h3>Финал</h3><p>Показываем результат, даём рекомендации по домашнему уходу и приглашаем на следующий визит.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="masters" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Мастера</h2>
+      <p>Вымышленные профили для примера. Имена и опыт замените на данные реальной команды.</p>
+    </div>
+    <div class="cards cards-3">
+      <article class="person tilt reveal"><div class="avatar" style="--bg:#E9D6B8">А</div><h3>Анна</h3><p class="role">Старший мастер-грумер</p><p>Стрижки по стандарту породы, работа с пугливыми питомцами.</p></article>
+      <article class="person tilt reveal"><div class="avatar" style="--bg:#CFE3D4">М</div><h3>Мария</h3><p class="role">Мастер по кошкам</p><p>Вычёсывание, гигиенические и модельные стрижки для кошек.</p></article>
+      <article class="person tilt reveal"><div class="avatar" style="--bg:#F7E3A6">Д</div><h3>Дарья</h3><p class="role">Мастер SPA-ухода</p><p>Маски, увлажнение и восстановление шерсти.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="prices" class="section section-tint">
+  <div class="container prices-grid">
+    <div class="section-head reveal">
+      <h2>Цены</h2>
+      <p>Примерные цены для демонстрации. Точную стоимость мастер называет после осмотра.</p>
+    </div>
+    <div class="price-list reveal">
+      <div class="price-row"><span>Комплекс для собаки малой породы</span><b>от 2 500 ₽</b></div>
+      <div class="price-row"><span>Комплекс для собаки средней породы</span><b>от 3 500 ₽</b></div>
+      <div class="price-row"><span>Комплекс для собаки крупной породы</span><b>от 5 000 ₽</b></div>
+      <div class="price-row"><span>Комплекс для кошки</span><b>от 3 000 ₽</b></div>
+      <div class="price-row"><span>SPA-уход</span><b>от 1 200 ₽</b></div>
+      <div class="price-row"><span>Экспресс-линька</span><b>от 1 800 ₽</b></div>
+      <div class="price-row"><span>Когти, уши, гигиена</span><b>от 600 ₽</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Отзывы</h2>
+      <p>Вымышленные отзывы для примера оформления. В боевом проекте используйте только настоящие.</p>
+    </div>
+    <div class="cards cards-3">
+      <blockquote class="review tilt reveal"><p>«Пёс обычно боится мойки, а тут вышел спокойным и довольным. Шерсть мягкая, форма аккуратная».</p><footer>Ирина, хозяйка спаниеля</footer></blockquote>
+      <blockquote class="review tilt reveal"><p>«Кошку вычесали так, что дома стало заметно меньше шерсти. Спасибо за терпение».</p><footer>Олег, хозяин британца</footer></blockquote>
+      <blockquote class="review tilt reveal"><p>«Записали на удобное время, мастер объяснил каждый шаг и дал советы по уходу».</p><footer>Мария, хозяйка пуделя</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section section-tint">
+  <div class="container faq-grid">
+    <div class="section-head reveal">
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Мой питомец боится груминга. Что делать?<span class="plus" aria-hidden="true">+</span></summary><p>Скажите об этом при записи. Мастер работает в спокойном темпе и делает паузы. Для пугливых питомцев можно сначала прийти познакомиться с залом.</p></details>
+      <details><summary>Вы даёте питомцу успокоительное?<span class="plus" aria-hidden="true">+</span></summary><p>Нет. Если питомец сильно нервничает, мы остановимся и предложим перенести уход.</p></details>
+      <details><summary>Сколько длится визит?<span class="plus" aria-hidden="true">+</span></summary><p>Зависит от породы, размера и состояния шерсти. Примерное время назовём при записи.</p></details>
+      <details><summary>На шерсти колтуны. Вы справитесь?<span class="plus" aria-hidden="true">+</span></summary><p>Мастер оценит их при осмотре. Если расчесать без боли не получится, предложим короткую стрижку и заранее скажем стоимость.</p></details>
+      <details><summary>Можно остаться рядом с питомцем?<span class="plus" aria-hidden="true">+</span></summary><p>На первом визите можно, если питомцу так спокойнее. Обсудим это при записи.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="section">
+  <div class="container booking-grid">
+    <div class="booking-text reveal">
+      <p class="eyebrow">Запись</p>
+      <h2>Оставьте телефон: подберём время</h2>
+      <p>Перезвоним, уточним породу и состояние шерсти, назовём цену и предложим свободное время.</p>
+      <ul class="contacts">
+        <li>г. Ваш город, ул. Примерная, 1</li>
+        <li><a href="tel:+79000000000">+7 900 000-00-00</a></li>
+        <li>Ежедневно, 10:00–20:00</li>
+      </ul>
+    </div>
+    <form class="form reveal" id="booking-form" novalidate>
+      <label>Ваше имя<input type="text" name="name" autocomplete="name"></label>
+      <label>Телефон<input type="tel" name="phone" autocomplete="tel" required></label>
+      <fieldset>
+        <legend>Питомец</legend>
+        <div class="radios">
+          <label><input type="radio" name="pet" value="dog" checked> Собака</label>
+          <label><input type="radio" name="pet" value="cat"> Кошка</label>
+        </div>
+      </fieldset>
+      <button class="btn btn-primary" type="submit">Записаться на груминг</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      <p class="fine">Демо-форма: данные никуда не отправляются.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span class="brand brand-footer"><svg width="30" height="30" aria-hidden="true"><use href="#icon-paw"/></svg><strong>Мягкая лапа</strong></span>
+    <span>Демо-проект: все данные вымышлены</span>
+    <a href="tel:+79000000000">+7 900 000-00-00</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

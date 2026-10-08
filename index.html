@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Оскар — зоосалон, груминг для собак и кошек</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#23474A}
+a{color:#D9BF8C;text-decoration:none}a:hover{color:#F3E3C0}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+
+.btn{position:relative;overflow:hidden;isolation:isolate;transition:transform .15s ease,box-shadow .35s ease,border-color .2s ease,background-color .2s ease}
+.btn-primary::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.4) 50%,transparent 70%);transform:translateX(-110%);transition:transform .6s ease}
+.btn-primary:hover,.btn-primary:focus-visible{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(0,0,0,.45),0 0 32px -6px color-mix(in srgb,var(--accent) 70%,transparent)}
+.btn-primary:hover::after,.btn-primary:focus-visible::after{transform:translateX(110%)}
+.btn-ghost:hover,.btn-ghost:focus-visible{transform:translateY(-2px);border-color:var(--accent)!important;box-shadow:0 0 28px -6px color-mix(in srgb,var(--accent) 60%,transparent)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-pulse{animation:pulseRing 2.8s ease-out 1.6s infinite}
+.btn-pulse:hover,.btn-pulse:focus-visible{animation:none}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent)}70%{box-shadow:0 0 0 16px color-mix(in srgb,var(--accent) 0%,transparent)}100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 0%,transparent)}}
+
+.hero-text>*{animation:fadeUp .8s ease backwards}
+.hero-text>:nth-child(1){animation-delay:.05s}
+.hero-text>:nth-child(2){animation:fadeUp 1s cubic-bezier(.2,.8,.2,1) .2s backwards}
+.hero-text>:nth-child(3){animation-delay:.55s}
+.hero-text>:nth-child(4){animation-delay:.7s}
+.hero-text>:nth-child(5){animation-delay:.85s}
+.hero-photo{animation:photoIn 1.2s cubic-bezier(.2,.8,.2,1) .15s backwards}
+.hero-photo.d2{animation-delay:.35s}
+.hero-photo.d3{animation-delay:.5s}
+.hero-zoom{animation:slowZoom 20s ease-in-out infinite alternate}
+@keyframes photoIn{from{opacity:0;transform:translateY(30px) scale(.97)}}
+@keyframes slowZoom{to{transform:scale(1.07)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}}
+
+.ticker-track{animation:ticker 45s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+.card{transition:background-color .3s ease}
+.card:hover{background-color:#244A4D!important}
+.card-num{display:inline-block;transition:transform .3s ease}
+.card:hover .card-num{transform:translateX(6px)}
+
+.work-img{position:relative;overflow:hidden}
+.work-img img{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.work:hover .work-img img{transform:scale(1.05)}
+.work-img::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%);transform:translateX(-120%);transition:transform .8s ease;pointer-events:none}
+.work:hover .work-img::after{transform:translateX(120%)}
+
+.review{transition:transform .45s cubic-bezier(.2,.8,.2,1.2),border-color .3s ease,box-shadow .45s ease}
+.review:hover{transform:translateY(-6px);border-color:var(--accent)!important;box-shadow:0 24px 40px -24px rgba(0,0,0,.6)}
+
+.row{transition:background-color .25s ease}
+.row:hover{background-color:rgba(255,255,255,.04)}
+.row-name{display:inline-block;transition:transform .25s ease,color .25s ease}
+.row:hover .row-name{transform:translateX(6px);color:var(--accent)}
+
+.faq-plus{display:inline-block;transition:transform .25s ease}
+details[open] .faq-plus{transform:rotate(45deg)}
+details[open] .faq-a{animation:fadeUp .4s ease}
+
+@supports (animation-timeline: view()){
+.reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+}
+@keyframes reveal{from{opacity:.2;transform:translateY(48px) scale(.97)}}
+
+.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:1100px){.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid-4,.grid-3{grid-template-columns:minmax(0,1fr)}header nav{display:none!important}}
+
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div style="--accent: #D9BF8C; background: #23474A; color: #F3EEE4; font-family: 'Manrope', system-ui, sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; overflow-x: hidden">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<a href="#top" aria-label="Зоосалон OSCAR — на главную" style="display: inline-flex; align-items: center; gap: 12px; color: #F3EEE4">
+<svg width="46" height="46" viewBox="0 0 64 64" aria-hidden="true"><circle cx="13" cy="21" r="7" fill="#2FAE5B"></circle><circle cx="25" cy="11" r="7.5" fill="#2FAE5B"></circle><circle cx="39" cy="11" r="7.5" fill="#2FAE5B"></circle><circle cx="51" cy="21" r="7" fill="#2FAE5B"></circle><circle cx="32" cy="42" r="19" fill="#2FAE5B"></circle><circle cx="32" cy="42" r="8.5" fill="#F3EEE4"></circle></svg>
+<span style="display: flex; flex-direction: column; line-height: 1">
+<span style="font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 26px; letter-spacing: 0.08em">OSCAR</span>
+<span style="margin-top: 5px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #A9BBB7">салон красоты для животных</span>
+</span>
+</a>
+<nav aria-label="Основное меню" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase">
+<a href="#services">Услуги</a>
+<a href="#gallery">Работы</a>
+<a href="#reviews">Отзывы</a>
+<a href="#masters">Мастера</a>
+<a href="#prices">Цены</a>
+<a href="#faq">Вопросы</a>
+</nav>
+<a href="#booking" class="btn btn-ghost" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 24px; border: 1px solid #D9BF8C; color: #D9BF8C; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase">Записаться</a>
+</header>
+
+<section id="top" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px">
+<div class="hero-text" style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #D9BF8C">Зоосалон OSCAR · Ломоносов</p>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(46px, 6.4vw, 86px); line-height: 1.04; letter-spacing: -0.01em">Груминг, после которого питомец <em style="font-style: italic; color: #D9BF8C">не боится</em> возвращаться</h1>
+<p style="margin: 0; max-width: 540px; font-size: 18px; color: #C3D0CC">В зале только ваш питомец и один мастер. Без успокоительных уколов и без спешки: делаем паузы, если он устал. Вы забираете ухоженного и спокойного любимца.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; padding-top: 8px">
+<a href="#booking" class="btn btn-primary btn-pulse" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 32px; background: #D9BF8C; color: #163032; font-weight: 600; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase">Записаться на груминг</a>
+<a href="#prices" class="btn btn-ghost" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border: 1px solid #6A8E90; color: #F3EEE4; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase">Узнать стоимость</a>
+<a href="tel:+79110294499" style="display: inline-flex; align-items: center; min-height: 52px; color: #C3D0CC; font-size: 15px">или позвоните <span style="color: #F3EEE4; margin-left: 6px; white-space: nowrap">+7 911 029-44-99</span></a>
+</div>
+<a href="#reviews" style="display: inline-flex; align-items: center; gap: 10px; color: #C3D0CC; font-size: 15px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="#D9BF8C" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg>
+5,0 на Яндекс Картах · 126 оценок
+</a>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; gap: 16px; height: 560px">
+<div class="hero-photo" style="flex: 3 1 0; min-width: 0; overflow: hidden; border: 1px solid #3A6266">
+<img class="hero-zoom" src="assets/708ec0026329f653883b12c59f1dd4dc.webp" alt="Кавалер-кинг-чарльз-спаниель после груминга" style="width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; display: block">
+</div>
+<div style="flex: 2 1 0; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<img class="hero-photo d2" src="assets/8cd342a5fe7b913f62588d74935c4891.webp" alt="Йоркширский терьер после стрижки в зоосалоне «Оскар»" style="flex: 1 1 0; min-height: 0; width: 100%; object-fit: cover; object-position: 55% 50%; border: 1px solid #3A6266; display: block">
+<img class="hero-photo d3" src="assets/ffdf09cc9b34698e6ad544a0722cc7dc.webp" alt="Померанский шпиц после груминга" style="flex: 1 1 0; min-height: 0; width: 100%; object-fit: cover; object-position: 50% 30%; border: 1px solid #3A6266; display: block">
+</div>
+</div>
+</section>
+
+<div class="ticker" aria-hidden="true" style="border-top: 1px solid #3A6266; background: #1D3D40; overflow: hidden; padding: 22px 0">
+<div class="ticker-track" style="display: flex; width: max-content; gap: 48px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: #C3D0CC; white-space: nowrap">
+<span>Стрижка по стандарту породы</span><span style="color: #D9BF8C">·</span>
+<span>Мытьё и сушка</span><span style="color: #D9BF8C">·</span>
+<span>SPA-уход</span><span style="color: #D9BF8C">·</span>
+<span>Экспресс-линька</span><span style="color: #D9BF8C">·</span>
+<span>Когти, уши, глаза</span><span style="color: #D9BF8C">·</span>
+<span>Собаки и кошки</span><span style="color: #D9BF8C">·</span>
+<span>Стрижка по стандарту породы</span><span style="color: #D9BF8C">·</span>
+<span>Мытьё и сушка</span><span style="color: #D9BF8C">·</span>
+<span>SPA-уход</span><span style="color: #D9BF8C">·</span>
+<span>Экспресс-линька</span><span style="color: #D9BF8C">·</span>
+<span>Когти, уши, глаза</span><span style="color: #D9BF8C">·</span>
+<span>Собаки и кошки</span><span style="color: #D9BF8C">·</span>
+</div>
+</div>
+
+<section id="services" style="border-top: 1px solid #3A6266; background: #1D3D40">
+<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 56px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05">Что мы делаем</h2>
+<p style="margin: 0; max-width: 440px; color: #C3D0CC">Перед началом мастер осматривает шерсть и кожу и подбирает уход под породу, состояние шерсти и характер питомца.</p>
+</div>
+<div class="grid-4" style="display: grid; gap: 1px; background: #3A6266; border: 1px solid #3A6266">
+<div class="card reveal" style="background: #1D3D40; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px">
+<span class="card-num" style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #D9BF8C">01</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; line-height: 1.15">Комплекс для собак</h3>
+<p style="margin: 0; color: #C3D0CC">Мытьё, сушка и стрижка по стандарту породы или так, как нравится вам. Когти, уши и глаза в том же визите.</p>
+</div>
+<div class="card reveal" style="background: #1D3D40; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px">
+<span class="card-num" style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #D9BF8C">02</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; line-height: 1.15">Комплекс для кошек</h3>
+<p style="margin: 0; color: #C3D0CC">Отдельное время, когда в зале нет собак. Вычешем подшёрсток, сделаем гигиеническую или модельную стрижку.</p>
+</div>
+<div class="card reveal" style="background: #1D3D40; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px">
+<span class="card-num" style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #D9BF8C">03</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; line-height: 1.15">SPA-уход</h3>
+<p style="margin: 0; color: #C3D0CC">Маски и увлажнение для сухой, тусклой или путающейся шерсти. Она становится мягче и легче расчёсывается дома.</p>
+</div>
+<div class="card reveal" style="background: #1D3D40; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px">
+<span class="card-num" style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #D9BF8C">04</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; line-height: 1.15">Экспресс-линька</h3>
+<p style="margin: 0; color: #C3D0CC">Убираем подшёрсток за один визит. Дома заметно меньше шерсти на диване и одежде.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="gallery" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px 0; display: flex; flex-direction: column; gap: 48px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05">Работы наших мастеров</h2>
+<p style="margin: 0; max-width: 440px; color: #C3D0CC">Питомцы наших клиентов после визита в «Оскар».</p>
+</div>
+<div class="grid-3" style="display: grid; gap: 16px">
+<figure class="work reveal" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div class="work-img" style="border: 1px solid #3A6266"><img src="assets/8e9c6bc560d09301a513e789d76a0b63.webp" alt="Кошка рядом с вычесанным подшёрстком" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block"></div>
+<figcaption style="font-size: 14px; color: #A9BBB7">Экспресс-линька: столько подшёрстка ушло за один визит</figcaption>
+</figure>
+<figure class="work reveal" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div class="work-img" style="border: 1px solid #3A6266"><img src="assets/ffdf09cc9b34698e6ad544a0722cc7dc.webp" alt="Померанский шпиц после груминга" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; display: block"></div>
+<figcaption style="font-size: 14px; color: #A9BBB7">Померанский шпиц</figcaption>
+</figure>
+<figure class="work reveal" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div class="work-img" style="border: 1px solid #3A6266"><img src="assets/50b9c3ec82f451b6317962e75ff779f9.webp" alt="Китайская хохлатая пуховка после груминга" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block"></div>
+<figcaption style="font-size: 14px; color: #A9BBB7">Китайская хохлатая пуховка</figcaption>
+</figure>
+<figure class="work reveal" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div class="work-img" style="border: 1px solid #3A6266"><img src="assets/a73b22869cf956723b9e4f4aa5933782.webp" alt="Американский кокер-спаниель после стрижки" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; display: block"></div>
+<figcaption style="font-size: 14px; color: #A9BBB7">Американский кокер-спаниель</figcaption>
+</figure>
+<figure class="work reveal" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div class="work-img" style="border: 1px solid #3A6266"><img src="assets/9c9fb00151b979ef872e32b84ccf3746.webp" alt="Йоркширский терьер с бантиком после стрижки" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 40% 50%; display: block"></div>
+<figcaption style="font-size: 14px; color: #A9BBB7">Йоркширский терьер</figcaption>
+</figure>
+<figure class="work reveal" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div class="work-img" style="border: 1px solid #3A6266"><img src="assets/5b254f0060e989db8b30de5a58d707b7.webp" alt="Чёрная кошка после ухода, новогодняя фотосессия" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 70% 50%; display: block"></div>
+<figcaption style="font-size: 14px; color: #A9BBB7">Кошка после ухода</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="before-after" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div class="reveal" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #D9BF8C">До и после</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05">Потяните ползунок</h2>
+<p style="margin: 0; color: #C3D0CC">Один и тот же питомец до визита и после: колтуны разобраны, глаза открыты, форма аккуратная.</p>
+<p style="margin: 0; padding: 14px 16px; border: 1px dashed #6A8E90; color: #A9BBB7; font-size: 14px">Иллюстрация, созданная нейросетью, — пример того, как будет выглядеть блок. Здесь будут 2–3 пары реальных фото работ салона.</p>
+</div>
+<div class="reveal" style="flex: 1.4 1 460px; min-width: 0">
+<div style="position: relative; aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid #3A6266; user-select: none">
+<img src="assets/f25aee4f818fcbc0d5a6ce5c21731775.jpg" alt="Пример: белая собака после груминга" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<span style="position: absolute; top: 16px; right: 16px; padding: 6px 12px; background: #D9BF8C; color: #163032; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase">После</span>
+<img id="ba-before" src="assets/907a082b8626ee091ebb6a2b9a856386.jpg" alt="Пример: та же собака до груминга, шерсть грязная и спутанная" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; clip-path: inset(0 50% 0 0)">
+<span style="position: absolute; top: 16px; left: 16px; padding: 6px 12px; background: #F3EEE4; color: #163032; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase">До</span>
+<div id="ba-handle" aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: #D9BF8C; pointer-events: none">
+<div style="position: absolute; top: 50%; left: 50%; width: 48px; height: 48px; margin: -24px 0 0 -24px; border-radius: 50%; background: #D9BF8C; color: #163032; display: grid; place-items: center; box-shadow: 0 8px 24px -8px rgba(0,0,0,.6)">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6"></path><path d="M15 6l6 6-6 6"></path></svg>
+</div>
+</div>
+<input type="range" min="0" max="100" id="ba-range" value="50" aria-label="Сравнить фото до и после" style="position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize">
+</div>
+<p style="margin: 12px 0 0; font-size: 14px; color: #A9BBB7">← тяните → · ИИ-иллюстрация</p>
+</div>
+</section>
+
+<section id="approach" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 64px">
+<div class="reveal" style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #D9BF8C">Наш подход</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05">Почему питомцы у нас спокойны</h2>
+<div class="work-img" style="border: 1px solid #3A6266"><img class="hero-zoom" src="assets/c146ffe0b39a17c32edf4ad2f454d2c6.webp" alt="Английский сеттер спокойно лежит в салоне" style="width: 100%; height: 400px; object-fit: cover; object-position: 50% 30%; display: block"></div>
+</div>
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column">
+<div class="reveal" style="padding: 32px 0; border-bottom: 1px solid #3A6266; display: flex; gap: 24px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D9BF8C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 4px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px">Один питомец, один мастер</h3>
+<p style="margin: 0; color: #C3D0CC">Никаких чужих животных, лая и суеты рядом. Мастер занят только вашим любимцем от начала до конца.</p>
+</div>
+</div>
+<div class="reveal" style="padding: 32px 0; border-bottom: 1px solid #3A6266; display: flex; gap: 24px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D9BF8C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11z"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px">Без успокоительных и спешки</h3>
+<p style="margin: 0; color: #C3D0CC">Устал или занервничал — делаем паузу. Пугливым питомцам предлагаем сначала просто познакомиться с залом и мастером.</p>
+</div>
+</div>
+<div class="reveal" style="padding: 32px 0; border-bottom: 1px solid #3A6266; display: flex; gap: 24px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D9BF8C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M9 3h6v4l2 3v10a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V10l2-3z"></path><path d="M7 13h10"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px">Косметика под тип шерсти</h3>
+<p style="margin: 0; color: #C3D0CC">Подбираем шампуни и кондиционеры под шерсть и чувствительность кожи, а не моем всех одним средством.</p>
+</div>
+</div>
+<div class="reveal" style="padding: 32px 0; display: flex; gap: 24px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D9BF8C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px">Советы после визита</h3>
+<p style="margin: 0; color: #C3D0CC">Расскажем, в каком состоянии шерсть и кожа, и как ухаживать дома, чтобы результат держался дольше.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="reviews" style="border-top: 1px solid #3A6266; background: #1D3D40">
+<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05">Что говорят владельцы</h2>
+<p style="margin: 0; color: #C3D0CC">Отзывы с Яндекс Карт · 5,0 из 5 · 126 оценок</p>
+</div>
+<div class="grid-3" style="display: grid; gap: 24px">
+<figure class="review reveal" style="margin: 0; padding: 36px 32px; background: #23474A; border: 1px solid #3A6266; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.4">«Уже посещаем салон 3-й год. До этого перепробовали 5 салонов… Собака не в стрессе, спокойная, её не трясёт, как это было ранее в других салонах».</blockquote>
+<figcaption style="font-size: 14px; color: #A9BBB7">Лилия Б. · 14 августа</figcaption>
+</figure>
+<figure class="review reveal" style="margin: 0; padding: 36px 32px; background: #23474A; border: 1px solid #3A6266; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.4">«Прекрасные грумеры. Ольге отдельное спасибо, сумела найти подход к моему пёсику. Ранее от работы с ним многие мастера отказывались, так как парень с характером».</blockquote>
+<figcaption style="font-size: 14px; color: #A9BBB7">Светлана К. · 22 августа</figcaption>
+</figure>
+<figure class="review reveal" style="margin: 0; padding: 36px 32px; background: #23474A; border: 1px solid #3A6266; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.4">«Посещаем зоосалон Оскар уже 4 года… Мой паникёр хоть и нервничает, но каждый раз смиренно идёт на все процедуры, все пожелания всегда учтены».</blockquote>
+<figcaption style="font-size: 14px; color: #A9BBB7">Анна Р. · 21 августа</figcaption>
+</figure>
+<figure class="review reveal" style="margin: 0; padding: 36px 32px; background: #23474A; border: 1px solid #3A6266; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.4">«Огромное спасибо за нашего персика Чифа. Стал прямо неузнаваемый. Мягче, весь чистенький… Прошла неделя после груминга, реально пух по квартире перестал летать».</blockquote>
+<figcaption style="font-size: 14px; color: #A9BBB7">Marina Pahomova · перс Чиф · 13 августа</figcaption>
+</figure>
+<figure class="review reveal" style="margin: 0; padding: 36px 32px; background: #23474A; border: 1px solid #3A6266; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.4">«Шерсть самоеда — это настоящее испытание… Итог превзошёл ожидания. Шерсть лежит волосок к волоску, но при этом выглядит очень натурально, всё благородно и породно».</blockquote>
+<figcaption style="font-size: 14px; color: #A9BBB7">Наталья П. · самоед Яся · 13 августа</figcaption>
+</figure>
+<figure class="review reveal" style="margin: 0; padding: 36px 32px; background: #23474A; border: 1px solid #3A6266; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<blockquote style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.4">«Хочу выразить огромную благодарность хозяйке зоосалона Ксении и мастеру Дарье за их кропотливый труд… Наш пудель просто преобразился после стрижки. Любуемся каждый день».</blockquote>
+<figcaption style="font-size: 14px; color: #A9BBB7">Светлана Ардиль · пудель · 13 августа</figcaption>
+</figure>
+</div>
+<a class="reveal" href="https://oscar-ulitsa-kostyleva.clients.site/" target="_blank" rel="noopener" style="align-self: flex-start; color: #C3D0CC; font-size: 15px; border-bottom: 1px solid #6A8E90; padding-bottom: 2px">Ещё 50 отзывов на Яндексе</a>
+</div>
+</section>
+
+<section id="masters" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px 0; display: flex; flex-direction: column; gap: 48px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05">Мастера, к которым возвращаются</h2>
+<p style="margin: 0; max-width: 440px; color: #C3D0CC">Клиенты записываются к «своему» мастеру и благодарят их по именам в отзывах.</p>
+</div>
+<div class="grid-3" style="display: grid; gap: 24px">
+<div class="review reveal" style="padding: 36px 32px; background: #1D3D40; border: 1px solid #3A6266; display: flex; flex-direction: column; gap: 20px">
+<div aria-hidden="true" style="width: 72px; height: 72px; border-radius: 50%; border: 1px solid #D9BF8C; display: grid; place-items: center; font-family: 'Cormorant Garamond', serif; font-size: 36px; color: #D9BF8C">К</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 30px">Ксения</h3>
+<span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #A9BBB7">Хозяйка салона и мастер</span>
+</div>
+<p style="margin: 0; color: #C3D0CC">По отзывам клиентов, сразу находит подход к активным и непоседливым собакам.</p>
+</div>
+<div class="review reveal" style="padding: 36px 32px; background: #1D3D40; border: 1px solid #3A6266; display: flex; flex-direction: column; gap: 20px">
+<div aria-hidden="true" style="width: 72px; height: 72px; border-radius: 50%; border: 1px solid #D9BF8C; display: grid; place-items: center; font-family: 'Cormorant Garamond', serif; font-size: 36px; color: #D9BF8C">Д</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 30px">Дарья</h3>
+<span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #A9BBB7">Мастер-грумер</span>
+</div>
+<p style="margin: 0; color: #C3D0CC">Клиенты благодарят за кропотливую работу: после её стрижки пудель «просто преобразился».</p>
+</div>
+<div class="review reveal" style="padding: 36px 32px; background: #1D3D40; border: 1px solid #3A6266; display: flex; flex-direction: column; gap: 20px">
+<div aria-hidden="true" style="width: 72px; height: 72px; border-radius: 50%; border: 1px solid #D9BF8C; display: grid; place-items: center; font-family: 'Cormorant Garamond', serif; font-size: 36px; color: #D9BF8C">О</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 30px">Ольга</h3>
+<span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #A9BBB7">Мастер-грумер</span>
+</div>
+<p style="margin: 0; color: #C3D0CC">Находит подход к собакам с характером, от которых отказывались другие мастера.</p>
+</div>
+</div>
+</section>
+
+<section id="prices" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-direction: column; gap: 48px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05">Сколько стоит</h2>
+<p style="margin: 0; max-width: 460px; color: #C3D0CC">Цена зависит от породы, размера и состояния шерсти. Чтобы не гадать по прайсу, пришлите фото питомца — мастер назовёт точную стоимость.</p>
+</div>
+<ol class="grid-3" style="list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: #3A6266; border: 1px solid #3A6266">
+<li class="card reveal" style="background: #23474A; padding: 40px 32px; display: flex; flex-direction: column; gap: 16px">
+<span class="card-num" style="font-family: 'Cormorant Garamond', serif; font-size: 56px; line-height: 1; color: #D9BF8C">1</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; line-height: 1.15">Сфотографируйте питомца</h3>
+<p style="margin: 0; color: #C3D0CC">Сбоку и мордочку, при дневном свете. Так мастер увидит длину и состояние шерсти.</p>
+</li>
+<li class="card reveal" style="background: #23474A; padding: 40px 32px; display: flex; flex-direction: column; gap: 16px">
+<span class="card-num" style="font-family: 'Cormorant Garamond', serif; font-size: 56px; line-height: 1; color: #D9BF8C">2</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; line-height: 1.15">Отправьте фото нам</h3>
+<p style="margin: 0; color: #C3D0CC">На номер <a href="tel:+79110294499" style="color: #F3EEE4; white-space: nowrap">+7 911 029-44-99</a>. Напишите породу, возраст и какую услугу хотите.</p>
+</li>
+<li class="card reveal" style="background: #23474A; padding: 40px 32px; display: flex; flex-direction: column; gap: 16px">
+<span class="card-num" style="font-family: 'Cormorant Garamond', serif; font-size: 56px; line-height: 1; color: #D9BF8C">3</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 28px; line-height: 1.15">Узнайте цену и время</h3>
+<p style="margin: 0; color: #C3D0CC">Мастер назовёт стоимость и предложит удобное время. Если при осмотре что-то изменится, скажем до начала работы.</p>
+</li>
+</ol>
+<div class="reveal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+<a href="tel:+79110294499" class="btn btn-primary" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 32px; background: #D9BF8C; color: #163032; font-weight: 600; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase">Позвонить в салон</a>
+<a href="#booking" class="btn btn-ghost" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border: 1px solid #6A8E90; color: #F3EEE4; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase">Оставить заявку</a>
+</div>
+</section>
+
+<section id="faq" style="border-top: 1px solid #3A6266; background: #1D3D40">
+<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; gap: 64px">
+<div class="reveal" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05">Частые вопросы</h2>
+<p style="margin: 0; color: #C3D0CC">Не нашли ответ? Спросите при записи, администратор всё расскажет.</p>
+</div>
+<div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column">
+<details class="reveal" style="border-bottom: 1px solid #3A6266">
+<summary style="min-height: 44px; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600">Мой питомец боится стрижки. Что делать?<span class="faq-plus" aria-hidden="true" style="color: #D9BF8C; font-size: 28px; font-family: 'Manrope', sans-serif; font-weight: 400">+</span></summary>
+<p class="faq-a" style="margin: 0 0 24px; color: #C3D0CC">Скажите об этом при записи. Мастер работает в спокойном темпе и делает паузы. Для очень пугливых питомцев можно сначала прийти просто познакомиться с залом.</p>
+</details>
+<details class="reveal" style="border-bottom: 1px solid #3A6266">
+<summary style="min-height: 44px; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600">Вы даёте питомцу успокоительное?<span class="faq-plus" aria-hidden="true" style="color: #D9BF8C; font-size: 28px; font-family: 'Manrope', sans-serif; font-weight: 400">+</span></summary>
+<p class="faq-a" style="margin: 0 0 24px; color: #C3D0CC">Нет, ни уколов, ни таблеток. Если питомец сильно нервничает, мы остановимся и предложим перенести уход, чтобы не закреплять страх.</p>
+</details>
+<details class="reveal" style="border-bottom: 1px solid #3A6266">
+<summary style="min-height: 44px; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600">Сколько длится визит?<span class="faq-plus" aria-hidden="true" style="color: #D9BF8C; font-size: 28px; font-family: 'Manrope', sans-serif; font-weight: 400">+</span></summary>
+<p class="faq-a" style="margin: 0 0 24px; color: #C3D0CC">Зависит от породы, размера и состояния шерсти. Ориентировочное время назовём при записи, чтобы вы могли спланировать день.</p>
+</details>
+<details class="reveal" style="border-bottom: 1px solid #3A6266">
+<summary style="min-height: 44px; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600">На шерсти колтуны. Вы с ними справитесь?<span class="faq-plus" aria-hidden="true" style="color: #D9BF8C; font-size: 28px; font-family: 'Manrope', sans-serif; font-weight: 400">+</span></summary>
+<p class="faq-a" style="margin: 0 0 24px; color: #C3D0CC">Мастер оценит их при осмотре. Если расчесать без боли не получится, предложим короткую стрижку и заранее скажем, сколько это стоит.</p>
+</details>
+<details class="reveal">
+<summary style="min-height: 44px; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600">Можно остаться рядом с питомцем?<span class="faq-plus" aria-hidden="true" style="color: #D9BF8C; font-size: 28px; font-family: 'Manrope', sans-serif; font-weight: 400">+</span></summary>
+<p class="faq-a" style="margin: 0 0 24px; color: #C3D0CC">На первом визите — да, если питомцу так спокойнее. Обсудим это при записи.</p>
+</details>
+</div>
+</div>
+</section>
+
+<section id="booking" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 64px">
+<div class="reveal" style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #D9BF8C">Запись</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05">Оставьте телефон — подберём время</h2>
+<p style="margin: 0; max-width: 440px; color: #C3D0CC">Перезвоним, уточним породу и состояние шерсти, назовём цену и предложим свободное время. Или позвоните сами.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 16px; font-size: 16px">
+<span>Ломоносов, ул. Костылева, 19</span>
+<a href="tel:+79110294499" style="color: #F3EEE4; font-size: 22px">+7 911 029-44-99</a>
+<span style="color: #A9BBB7">Ежедневно, 10:00–20:00</span>
+<a href="https://yandex.ru/maps/?text=%D0%9B%D0%BE%D0%BC%D0%BE%D0%BD%D0%BE%D1%81%D0%BE%D0%B2%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9A%D0%BE%D1%81%D1%82%D1%8B%D0%BB%D0%B5%D0%B2%D0%B0%2C%2019%20%D0%9E%D1%81%D0%BA%D0%B0%D1%80" target="_blank" rel="noopener" style="align-self: flex-start; font-size: 15px; border-bottom: 1px solid currentColor; padding-bottom: 2px">Построить маршрут →</a>
+</div>
+<figure class="work" style="margin: 8px 0 0; display: flex; flex-direction: column; gap: 12px">
+<div class="work-img" style="border: 1px solid #3A6266"><img src="assets/e452ad601fb06a5d96d78eac55db940f.webp" alt="Вывеска зоосалона OSCAR на кирпичном фасаде" style="width: 100%; height: 260px; object-fit: cover; object-position: 30% 45%; display: block"></div>
+<figcaption style="font-size: 14px; color: #A9BBB7">Ищите зелёную вывеску OSCAR</figcaption>
+</figure>
+</div>
+<form class="reveal" style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px; padding: 40px; background: #2A5155; border: 1px solid #3A6266">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9BBB7">Ваше имя
+<input type="text" name="name" autocomplete="name" style="min-height: 48px; padding: 0 16px; background: #1D3D40; border: 1px solid #4A7175; color: #F3EEE4; font: inherit; font-size: 16px; text-transform: none; letter-spacing: 0">
+</label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9BBB7">Телефон
+<input type="tel" name="phone" autocomplete="tel" style="min-height: 48px; padding: 0 16px; background: #1D3D40; border: 1px solid #4A7175; color: #F3EEE4; font: inherit; font-size: 16px; text-transform: none; letter-spacing: 0">
+</label>
+<fieldset style="margin: 0; padding: 0; border: none; display: flex; flex-direction: column; gap: 8px">
+<legend style="padding: 0 0 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9BBB7">Питомец</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<label style="flex: 1 1 140px; min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 16px; background: #1D3D40; border: 1px solid #4A7175; cursor: pointer"><input type="radio" name="pet" value="dog" checked> Собака</label>
+<label style="flex: 1 1 140px; min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 16px; background: #1D3D40; border: 1px solid #4A7175; cursor: pointer"><input type="radio" name="pet" value="cat"> Кошка</label>
+</div>
+</fieldset>
+<button type="button" class="btn btn-primary" style="min-height: 52px; background: #D9BF8C; color: #163032; border: none; font: inherit; font-weight: 600; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer">Записаться на груминг</button>
+<p style="margin: 0; font-size: 13px; color: #A9BBB7">Перезваниваем ежедневно с 10:00 до 20:00. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+</form>
+</section>
+
+<footer style="border-top: 1px solid #3A6266">
+<div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; font-size: 14px; color: #A9BBB7">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #F3EEE4">
+<svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><circle cx="13" cy="21" r="7" fill="#2FAE5B"></circle><circle cx="25" cy="11" r="7.5" fill="#2FAE5B"></circle><circle cx="39" cy="11" r="7.5" fill="#2FAE5B"></circle><circle cx="51" cy="21" r="7" fill="#2FAE5B"></circle><circle cx="32" cy="42" r="19" fill="#2FAE5B"></circle><circle cx="32" cy="42" r="8.5" fill="#F3EEE4"></circle></svg>
+<span style="font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 20px; letter-spacing: 0.08em">OSCAR</span>
+</span>
+<span>Салон красоты для животных · Ломоносов, ул. Костылева, 19</span>
+<div style="display: flex; gap: 24px">
+<a href="tel:+79110294499">+7 911 029-44-99</a>
+<a href="https://oscar-ulitsa-kostyleva.clients.site/" target="_blank" rel="noopener">Мы на Яндексе</a>
+</div>
+</div>
+</footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
