@@ -1,10 +1,11 @@
 :root {
-  --cream: #FBF6EE;
-  --tint: #F4EBDD;
+  --cream: #F7EAD7;
+  --tint: rgba(255, 255, 255, .4);
+  --page-bg: linear-gradient(160deg, #F3E2C6 0%, #F6D9BF 50%, #F4CBB3 100%);
   --paper: #FFFFFF;
   --ink: #2B2A33;
   --muted: #5E5B68;
-  --line: #E6DCCB;
+  --line: #DCCBAA;
   --coral: #EE7B5C;
   --coral-dark: #BF4327;
   --plum: #3B2F4A;
@@ -13,11 +14,19 @@
   --font-head: 'Playfair Display', Georgia, serif;
 }
 
+/* Варианты фона: песок + градиент (переключаются через data-bg на <html>) */
+html[data-bg="1"] { --cream: #F5E9D4; --page-bg: linear-gradient(180deg, #F1E1C6 0%, #F8EEDC 50%, #F3E5CC 100%); }
+html[data-bg="2"] { --cream: #F7EAD7; --page-bg: linear-gradient(160deg, #F3E2C6 0%, #F6D9BF 50%, #F4CBB3 100%); }
+html[data-bg="3"] { --cream: #F7E9D6; --page-bg: linear-gradient(160deg, #F5E6CC 0%, #F3D5CC 50%, #E4D3E8 100%); }
+html[data-bg="4"] { --cream: #F5EAD3; --page-bg: linear-gradient(180deg, #F4E6CC 0%, #E4E9D3 55%, #CDE2D9 100%); }
+html[data-bg="5"] { --cream: #F4E7D1; --page-bg: radial-gradient(60% 45% at 12% 8%, #F9D9C2 0%, transparent 70%), radial-gradient(50% 40% at 92% 22%, #FAEDB9 0%, transparent 70%), radial-gradient(60% 50% at 70% 95%, #F3D1C0 0%, transparent 70%), #F2E4CB; }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
   margin: 0;
-  background: var(--cream);
+  background: var(--page-bg);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 17px;
@@ -43,7 +52,7 @@ p { margin: 0; }
 }
 
 /* Шапка */
-.site-header { background: var(--cream); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.site-header { background: color-mix(in srgb, var(--cream) 72%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); }
 .brand:hover { text-decoration: none; }
@@ -208,7 +217,7 @@ p { margin: 0; }
 
 /* Шапка при прокрутке */
 .site-header { transition: box-shadow .3s ease, background-color .3s ease; }
-.site-header.scrolled { background: rgba(251, 246, 238, .86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 14px 30px -24px rgba(43, 42, 51, .6); }
+.site-header.scrolled { background: color-mix(in srgb, var(--cream) 88%, transparent); box-shadow: 0 14px 30px -24px rgba(43, 42, 51, .6); }
 .header-row { transition: padding .3s ease; }
 .site-header.scrolled .header-row { padding-top: 8px; padding-bottom: 8px; }
 
@@ -329,3 +338,10 @@ p { margin: 0; }
   .tilt:hover { transform: none; }
   .paws, .blobs { display: none; }
 }
+
+@media (hover: none) { body { background-attachment: scroll; } }
+
+/* Временный переключатель фона (удалить после выбора) */
+.bg-picker { position: fixed; left: 16px; bottom: 16px; z-index: 40; display: flex; align-items: center; gap: 10px; padding: 8px 14px; background: rgba(43, 42, 51, .92); color: #fff; border-radius: 999px; font-size: 13px; font-weight: 700; }
+.bg-picker button { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff; cursor: pointer; background: var(--sw); padding: 0; }
+.bg-picker button[aria-pressed="true"] { outline: 3px solid var(--coral); outline-offset: 2px; }

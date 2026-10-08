@@ -139,3 +139,19 @@ var canHover = window.matchMedia('(hover: hover)').matches;
     form.reset();
   });
 })();
+
+// Временный переключатель фона: ?bg=1..5 или кнопки внизу слева
+(function () {
+  var root = document.documentElement;
+  var buttons = document.querySelectorAll('.bg-picker [data-bg]');
+  var saved = null;
+  try { saved = localStorage.getItem('bg'); } catch (e) {}
+  var fromUrl = new URLSearchParams(location.search).get('bg');
+  function apply(v) {
+    root.dataset.bg = v;
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.bg === v)); });
+    try { localStorage.setItem('bg', v); } catch (e) {}
+  }
+  apply(/^[1-5]$/.test(fromUrl) ? fromUrl : (/^[1-5]$/.test(saved) ? saved : '2'));
+  buttons.forEach(function (b) { b.addEventListener('click', function () { apply(b.dataset.bg); }); });
+})();
