@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,8 +22,8 @@
       <ellipse cx="154" cy="106" rx="26" ry="52" transform="rotate(-12 154 106)" style="fill:var(--ear)"/>
       <ellipse cx="100" cy="96" rx="55" ry="62" style="fill:var(--fur)"/>
       <ellipse cx="100" cy="124" rx="31" ry="25" style="fill:var(--muzzle)"/>
-      <circle cx="80" cy="84" r="6.5" fill="#2B2A33"/>
-      <circle cx="120" cy="84" r="6.5" fill="#2B2A33"/>
+      <circle class="eye" cx="80" cy="84" r="6.5" fill="#2B2A33"/>
+      <circle class="eye" cx="120" cy="84" r="6.5" fill="#2B2A33"/>
       <ellipse cx="100" cy="111" rx="10" ry="7" fill="#2B2A33"/>
       <path d="M100 118v8M88 130q12 10 24 0" stroke="#2B2A33" stroke-width="3" fill="none" stroke-linecap="round"/>
     </symbol>
@@ -36,8 +37,8 @@
       <circle cx="68" cy="136" r="23" style="fill:var(--fur)"/>
       <circle cx="132" cy="136" r="23" style="fill:var(--fur)"/>
       <ellipse cx="100" cy="124" rx="20" ry="15" style="fill:var(--muzzle)"/>
-      <circle cx="80" cy="96" r="6" fill="#2B2A33"/>
-      <circle cx="120" cy="96" r="6" fill="#2B2A33"/>
+      <circle class="eye" cx="80" cy="96" r="6" fill="#2B2A33"/>
+      <circle class="eye" cx="120" cy="96" r="6" fill="#2B2A33"/>
       <ellipse cx="100" cy="115" rx="8.5" ry="6" fill="#2B2A33"/>
       <path d="M100 121v6M91 130q9 7 18 0" stroke="#2B2A33" stroke-width="3" fill="none" stroke-linecap="round"/>
     </symbol>
@@ -49,10 +50,10 @@
       <polygon points="62,62 66,34 88,54" style="fill:var(--muzzle)"/>
       <polygon points="138,62 134,34 112,54" style="fill:var(--muzzle)"/>
       <ellipse cx="100" cy="112" rx="64" ry="56" style="fill:var(--fur)"/>
-      <ellipse cx="78" cy="102" rx="10" ry="12" fill="#F2D77A"/>
-      <ellipse cx="122" cy="102" rx="10" ry="12" fill="#F2D77A"/>
-      <ellipse cx="78" cy="102" rx="3.5" ry="9" fill="#2B2A33"/>
-      <ellipse cx="122" cy="102" rx="3.5" ry="9" fill="#2B2A33"/>
+      <ellipse class="eye" cx="78" cy="102" rx="10" ry="12" fill="#F2D77A"/>
+      <ellipse class="eye" cx="122" cy="102" rx="10" ry="12" fill="#F2D77A"/>
+      <ellipse class="eye" cx="78" cy="102" rx="3.5" ry="9" fill="#2B2A33"/>
+      <ellipse class="eye" cx="122" cy="102" rx="3.5" ry="9" fill="#2B2A33"/>
       <polygon points="92,121 108,121 100,130" fill="#E58E8E"/>
       <path d="M100 130v7M88 140q12 8 24 0" stroke="#2B2A33" stroke-width="3" fill="none" stroke-linecap="round"/>
       <path d="M62 128l-34-6M62 136l-34 6M138 128l34-6M138 136l34 6" stroke="#2B2A33" stroke-width="2" stroke-linecap="round" opacity=".55"/>
@@ -66,8 +67,8 @@
       <path d="M58 74q12-14 26-4M116 66q16-8 26 6M70 62l10 14M130 60l-8 16M92 50l4 14" stroke="#9C8D7B" stroke-width="4" fill="none" stroke-linecap="round"/>
       <ellipse cx="100" cy="128" rx="22" ry="16" fill="#E6DCCE"/>
       <path d="M62 96q18 10 36 0M104 96q18 10 36 0" stroke="#9C8D7B" stroke-width="10" fill="none" stroke-linecap="round" opacity=".7"/>
-      <circle cx="80" cy="100" r="5" fill="#2B2A33"/>
-      <circle cx="120" cy="100" r="5" fill="#2B2A33"/>
+      <circle class="eye" cx="80" cy="100" r="5" fill="#2B2A33"/>
+      <circle class="eye" cx="120" cy="100" r="5" fill="#2B2A33"/>
       <ellipse cx="100" cy="118" rx="9" ry="6.5" fill="#2B2A33"/>
       <path d="M100 124v6M91 134q9 6 18 0" stroke="#2B2A33" stroke-width="3" fill="none" stroke-linecap="round"/>
     </symbol>
@@ -79,6 +80,7 @@
   </defs>
 </svg>
 
+<div class="progress" id="progress" aria-hidden="true"></div>
 <div class="demo-bar" role="note">Демо-проект для портфолио. Название, цены, отзывы и контакты вымышлены.</div>
 
 <header class="site-header">
@@ -102,13 +104,15 @@
 <main id="top">
 
 <section class="hero">
+  <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="paws" aria-hidden="true"><svg class="paw p1"><use href="#icon-paw"/></svg><svg class="paw p2"><use href="#icon-paw"/></svg><svg class="paw p3"><use href="#icon-paw"/></svg><svg class="paw p4"><use href="#icon-paw"/></svg><svg class="paw p5"><use href="#icon-paw"/></svg></div>
   <div class="container hero-grid">
     <div class="hero-text">
       <p class="eyebrow">Груминг-салон · Ваш город</p>
-      <h1>Ухоженный питомец и&nbsp;<em>спокойный</em> визит</h1>
+      <h1 aria-label="Ухоженный питомец и спокойный визит"><span class="w" style="--i:0"><span>Ухоженный</span></span> <span class="w" style="--i:1"><span>питомец</span></span> <span class="w" style="--i:2"><span>и</span></span> <span class="w" style="--i:3"><em><span>спокойный</span></em></span> <span class="w" style="--i:4"><span>визит</span></span></h1>
       <p class="lead">Бережно моем, стрижём и расчёсываем собак и кошек. Один мастер на питомца, без спешки и с перерывами, если нужно.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#booking">Записаться на груминг</a>
+        <a class="btn btn-primary btn-pulse" href="#booking">Записаться на груминг</a>
         <a class="btn btn-ghost" href="#prices">Узнать стоимость</a>
       </div>
       <p class="rating"><span aria-hidden="true">★★★★★</span> Пример блока с рейтингом: подставьте реальные данные клиента</p>
@@ -128,6 +132,16 @@
   </div>
 </div>
 
+
+<section class="stats" aria-label="Салон в цифрах">
+  <div class="container stats-grid">
+    <div class="stat reveal" style="--bg:#F6D5CB"><b data-count="8">8</b><span>лет заботимся о питомцах</span></div>
+    <div class="stat reveal" style="--bg:#CFE3D4"><b data-count="3500" data-suffix="+">3500+</b><span>довольных хвостов</span></div>
+    <div class="stat reveal" style="--bg:#F7E3A6"><b data-count="3">3</b><span>мастера-грумера</span></div>
+    <div class="stat reveal" style="--bg:#CFE0F1"><b data-count="98" data-suffix="%">98%</b><span>возвращаются снова</span></div>
+  </div>
+</section>
+
 <section id="services" class="section">
   <div class="container">
     <div class="section-head reveal">
@@ -135,10 +149,10 @@
       <p>Перед началом мастер осматривает шерсть и кожу, обсуждает с вами пожелания и только потом берётся за работу.</p>
     </div>
     <div class="cards">
-      <article class="card reveal"><span class="card-num">01</span><h3>Комплекс для собак</h3><p>Мытьё, сушка и стрижка по стандарту породы или по вашему желанию. Когти, уши и глаза в том же визите.</p></article>
-      <article class="card reveal"><span class="card-num">02</span><h3>Комплекс для кошек</h3><p>Отдельное время без собак в зале. Вычёсываем подшёрсток, делаем гигиеническую или модельную стрижку.</p></article>
-      <article class="card reveal"><span class="card-num">03</span><h3>SPA-уход</h3><p>Маски и увлажнение для сухой или путающейся шерсти. Дома её проще расчёсывать.</p></article>
-      <article class="card reveal"><span class="card-num">04</span><h3>Экспресс-линька</h3><p>Убираем лишний подшёрсток за один визит. Меньше шерсти на мебели и одежде.</p></article>
+      <article class="card tilt reveal"><span class="card-num">01</span><h3>Комплекс для собак</h3><p>Мытьё, сушка и стрижка по стандарту породы или по вашему желанию. Когти, уши и глаза в том же визите.</p></article>
+      <article class="card tilt reveal"><span class="card-num">02</span><h3>Комплекс для кошек</h3><p>Отдельное время без собак в зале. Вычёсываем подшёрсток, делаем гигиеническую или модельную стрижку.</p></article>
+      <article class="card tilt reveal"><span class="card-num">03</span><h3>SPA-уход</h3><p>Маски и увлажнение для сухой или путающейся шерсти. Дома её проще расчёсывать.</p></article>
+      <article class="card tilt reveal"><span class="card-num">04</span><h3>Экспресс-линька</h3><p>Убираем лишний подшёрсток за один визит. Меньше шерсти на мебели и одежде.</p></article>
     </div>
   </div>
 </section>
@@ -150,12 +164,12 @@
       <p>Здесь будут фото питомцев после груминга. Сейчас это иллюстрации-заглушки.</p>
     </div>
     <div class="gallery">
-      <figure class="work reveal"><div class="work-img" style="--bg:#F6D5CB;--fur:#E7B78A;--ear:#B97B4D;--muzzle:#F7E6D2"><svg role="img" aria-label="Иллюстрация: рыжий спаниель"><use href="#pet-dog"/></svg></div><figcaption>Спаниель: гигиеническая стрижка</figcaption></figure>
-      <figure class="work reveal"><div class="work-img" style="--bg:#CFE3D4;--fur:#FFFFFF;--muzzle:#EFE9E0"><svg role="img" aria-label="Иллюстрация: белый пудель"><use href="#pet-fluffy"/></svg></div><figcaption>Пудель: модельная стрижка</figcaption></figure>
-      <figure class="work reveal"><div class="work-img" style="--bg:#F7E3A6;--fur:#9AA3AF;--muzzle:#F3C9C9"><svg role="img" aria-label="Иллюстрация: серая кошка"><use href="#pet-cat"/></svg></div><figcaption>Кошка: вычёсывание подшёрстка</figcaption></figure>
-      <figure class="work reveal"><div class="work-img" style="--bg:#CFE0F1;--fur:#4A4655;--ear:#322E3B;--muzzle:#7A7586"><svg role="img" aria-label="Иллюстрация: чёрный пёс"><use href="#pet-dog"/></svg></div><figcaption>Лабрадудль: SPA-уход</figcaption></figure>
-      <figure class="work reveal"><div class="work-img" style="--bg:#E6DDF2;--fur:#F0C99A;--muzzle:#FBEBD3"><svg role="img" aria-label="Иллюстрация: абрикосовый пудель"><use href="#pet-fluffy"/></svg></div><figcaption>Абрикосовый пудель</figcaption></figure>
-      <figure class="work reveal"><div class="work-img" style="--bg:#F6D5CB;--fur:#E9A15C;--muzzle:#FBE1BF"><svg role="img" aria-label="Иллюстрация: рыжая кошка"><use href="#pet-cat"/></svg></div><figcaption>Рыжий кот после ухода</figcaption></figure>
+      <figure class="work reveal"><div class="work-img tilt" style="--bg:#F6D5CB;--fur:#E7B78A;--ear:#B97B4D;--muzzle:#F7E6D2"><svg role="img" aria-label="Иллюстрация: рыжий спаниель"><use href="#pet-dog"/></svg></div><figcaption>Спаниель: гигиеническая стрижка</figcaption></figure>
+      <figure class="work reveal"><div class="work-img tilt" style="--bg:#CFE3D4;--fur:#FFFFFF;--muzzle:#EFE9E0"><svg role="img" aria-label="Иллюстрация: белый пудель"><use href="#pet-fluffy"/></svg></div><figcaption>Пудель: модельная стрижка</figcaption></figure>
+      <figure class="work reveal"><div class="work-img tilt" style="--bg:#F7E3A6;--fur:#9AA3AF;--muzzle:#F3C9C9"><svg role="img" aria-label="Иллюстрация: серая кошка"><use href="#pet-cat"/></svg></div><figcaption>Кошка: вычёсывание подшёрстка</figcaption></figure>
+      <figure class="work reveal"><div class="work-img tilt" style="--bg:#CFE0F1;--fur:#4A4655;--ear:#322E3B;--muzzle:#7A7586"><svg role="img" aria-label="Иллюстрация: чёрный пёс"><use href="#pet-dog"/></svg></div><figcaption>Лабрадудль: SPA-уход</figcaption></figure>
+      <figure class="work reveal"><div class="work-img tilt" style="--bg:#E6DDF2;--fur:#F0C99A;--muzzle:#FBEBD3"><svg role="img" aria-label="Иллюстрация: абрикосовый пудель"><use href="#pet-fluffy"/></svg></div><figcaption>Абрикосовый пудель</figcaption></figure>
+      <figure class="work reveal"><div class="work-img tilt" style="--bg:#F6D5CB;--fur:#E9A15C;--muzzle:#FBE1BF"><svg role="img" aria-label="Иллюстрация: рыжая кошка"><use href="#pet-cat"/></svg></div><figcaption>Рыжий кот после ухода</figcaption></figure>
     </div>
   </div>
 </section>
@@ -203,9 +217,9 @@
       <p>Вымышленные профили для примера. Имена и опыт замените на данные реальной команды.</p>
     </div>
     <div class="cards cards-3">
-      <article class="person reveal"><div class="avatar" style="--bg:#F6D5CB">А</div><h3>Анна</h3><p class="role">Старший мастер-грумер</p><p>Стрижки по стандарту породы, работа с пугливыми питомцами.</p></article>
-      <article class="person reveal"><div class="avatar" style="--bg:#CFE3D4">М</div><h3>Мария</h3><p class="role">Мастер по кошкам</p><p>Вычёсывание, гигиенические и модельные стрижки для кошек.</p></article>
-      <article class="person reveal"><div class="avatar" style="--bg:#F7E3A6">Д</div><h3>Дарья</h3><p class="role">Мастер SPA-ухода</p><p>Маски, увлажнение и восстановление шерсти.</p></article>
+      <article class="person tilt reveal"><div class="avatar" style="--bg:#F6D5CB">А</div><h3>Анна</h3><p class="role">Старший мастер-грумер</p><p>Стрижки по стандарту породы, работа с пугливыми питомцами.</p></article>
+      <article class="person tilt reveal"><div class="avatar" style="--bg:#CFE3D4">М</div><h3>Мария</h3><p class="role">Мастер по кошкам</p><p>Вычёсывание, гигиенические и модельные стрижки для кошек.</p></article>
+      <article class="person tilt reveal"><div class="avatar" style="--bg:#F7E3A6">Д</div><h3>Дарья</h3><p class="role">Мастер SPA-ухода</p><p>Маски, увлажнение и восстановление шерсти.</p></article>
     </div>
   </div>
 </section>
@@ -235,9 +249,9 @@
       <p>Вымышленные отзывы для примера оформления. В боевом проекте используйте только настоящие.</p>
     </div>
     <div class="cards cards-3">
-      <blockquote class="review reveal"><p>«Пёс обычно боится мойки, а тут вышел спокойным и довольным. Шерсть мягкая, форма аккуратная».</p><footer>Ирина, хозяйка спаниеля</footer></blockquote>
-      <blockquote class="review reveal"><p>«Кошку вычесали так, что дома стало заметно меньше шерсти. Спасибо за терпение».</p><footer>Олег, хозяин британца</footer></blockquote>
-      <blockquote class="review reveal"><p>«Записали на удобное время, мастер объяснил каждый шаг и дал советы по уходу».</p><footer>Мария, хозяйка пуделя</footer></blockquote>
+      <blockquote class="review tilt reveal"><p>«Пёс обычно боится мойки, а тут вышел спокойным и довольным. Шерсть мягкая, форма аккуратная».</p><footer>Ирина, хозяйка спаниеля</footer></blockquote>
+      <blockquote class="review tilt reveal"><p>«Кошку вычесали так, что дома стало заметно меньше шерсти. Спасибо за терпение».</p><footer>Олег, хозяин британца</footer></blockquote>
+      <blockquote class="review tilt reveal"><p>«Записали на удобное время, мастер объяснил каждый шаг и дал советы по уходу».</p><footer>Мария, хозяйка пуделя</footer></blockquote>
     </div>
   </div>
 </section>
