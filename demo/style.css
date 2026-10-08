@@ -1,7 +1,7 @@
 :root {
-  --cream: #F3E8D3;
+  --cream: #F5ECDA;
   --tint: rgba(255, 255, 255, .4);
-  --page-bg: linear-gradient(160deg, #F2E6CF 0%, #E9D9BC 55%, #E0CBA5 100%);
+  --page-bg: linear-gradient(180deg, #F2E8D5 0%, #F9F3E5 50%, #EFE4CE 100%);
   --paper: #FFFFFF;
   --ink: #2B2A33;
   --muted: #5E5B68;
@@ -13,13 +13,6 @@
   --font-body: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-head: 'Playfair Display', Georgia, serif;
 }
-
-/* Варианты фона: бежевая гамма + градиент (переключаются через data-bg на <html>) */
-html[data-bg="1"] { --cream: #F5ECDA; --page-bg: linear-gradient(180deg, #F2E8D5 0%, #F9F3E5 50%, #EFE4CE 100%); }
-html[data-bg="2"] { --cream: #F3E8D3; --page-bg: linear-gradient(160deg, #F2E6CF 0%, #E9D9BC 55%, #E0CBA5 100%); }
-html[data-bg="3"] { --cream: #F5EEE1; --page-bg: linear-gradient(180deg, #F5EEE1 0%, #EBE3D0 55%, #DCD8C0 100%); }
-html[data-bg="4"] { --cream: #F3EAD4; --page-bg: linear-gradient(170deg, #F3E9D4 0%, #E7E5CA 55%, #D4DDC5 100%); }
-html[data-bg="5"] { --cream: #F2E7CF; --page-bg: radial-gradient(60% 45% at 12% 8%, #F5E3B5 0%, transparent 70%), radial-gradient(50% 40% at 92% 22%, #FBF4E2 0%, transparent 70%), radial-gradient(60% 50% at 70% 95%, #E5E7C8 0%, transparent 70%), #EFE2C8; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -340,8 +333,3 @@ p { margin: 0; }
 }
 
 @media (hover: none) { body { background-attachment: scroll; } }
-
-/* Временный переключатель фона (удалить после выбора) */
-.bg-picker { position: fixed; left: 16px; bottom: 16px; z-index: 40; display: flex; align-items: center; gap: 10px; padding: 8px 14px; background: rgba(43, 42, 51, .92); color: #fff; border-radius: 999px; font-size: 13px; font-weight: 700; }
-.bg-picker button { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff; cursor: pointer; background: var(--sw); padding: 0; }
-.bg-picker button[aria-pressed="true"] { outline: 3px solid var(--coral); outline-offset: 2px; }
