@@ -29,6 +29,8 @@ jobs:
           mkdir _site
           cp -r index.html script.js robots.txt assets demo _site/
           touch _site/.nojekyll
+          # Версия в адресах CSS/JS: после каждой публикации браузер берёт свежие файлы, а не кэш
+          sed -i "s/__V__/${GITHUB_SHA::7}/g" _site/index.html _site/demo/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
