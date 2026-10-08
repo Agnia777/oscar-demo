@@ -254,6 +254,11 @@ p { margin: 0; }
 .arch-big { animation-delay: .2s, 1.3s; animation-duration: 1s, 7s; }
 .arch.a1 { animation-delay: .4s, 1.5s; animation-duration: 1s, 5.5s; }
 .arch.a2 { animation-delay: .6s, 1.9s; animation-duration: 1s, 6.5s; animation-direction: normal, reverse; }
+.arch.photo { padding: 0; display: block; background: var(--tint); }
+.arch.photo img { width: 100%; height: 100%; object-fit: cover; animation: slowZoom 18s ease-in-out infinite alternate; }
+.a1.photo img { animation-delay: -6s; }
+.a2.photo img { animation-delay: -12s; }
+@keyframes slowZoom { to { transform: scale(1.08); } }
 .arch svg { transform-origin: 50% 100%; animation: sway 5s ease-in-out infinite; }
 .a1 svg { animation-delay: -1.5s; }
 .a2 svg { animation-delay: -3s; }
