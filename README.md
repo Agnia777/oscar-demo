@@ -19,3 +19,13 @@
 а иллюстрации `<svg><use href="#pet-…"/></svg>` на настоящие фото `<img>`.
 
 Локальный просмотр: `python3 -m http.server` и открыть http://localhost:8000 (или `/demo/`).
+
+## Публикация через Vercel
+Из этого репозитория делаются два независимых Vercel-проекта (Framework Preset: **Other**, команда сборки и Output Directory пустые):
+
+| Проект | Root Directory | Что публикуется |
+|---|---|---|
+| «Оскар» (для владелицы) | `./` (корень) | `index.html`, `script.js`, `assets/`; `.vercelignore` скрывает `demo/`, `CLAUDE.md`, `README.md`, `.github` |
+| «Мягкая лапа» (портфолио) | `demo` | содержимое папки `demo/` |
+
+«Оскар» закрыт от индексации (`noindex` и `robots.txt`), у демо этого нет.

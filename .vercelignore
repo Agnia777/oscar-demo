@@ -1,0 +1,7 @@
+# Для Vercel-проекта «Оскар» (Root Directory = корень репозитория).
+# Эти файлы не должны попасть на сайт клиента.
+CLAUDE.md
+README.md
+.github
+# Портфолио-демо публикуется отдельным Vercel-проектом (Root Directory = demo)
+demo
